@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--日志文件进行了自主更改-->
+    <!--日志输出路径-->
+    <property name="log.path" value="D:/logfile"/>
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <!--     <logger name="org.springframework.web" level="INFO"/> -->
+    <appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${log.path}/log_info.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover 保存历史记录到这个文件夹一日起为后缀 -->
+            <FileNamePattern>${log.path}/info/mqdesys.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern>
+            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="dailyRollingFileAppender"></appender-ref>
+    </root>
+</configuration>
