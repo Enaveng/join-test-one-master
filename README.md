@@ -16,4 +16,8 @@
 http://localhost:8110/index
 平台登录帐号: admin 密码: 111111
 
-项目演示:
+## 项目展示
+### 添加演示注册
+![](./images/1.png)
+![](./images/2.png)
+
