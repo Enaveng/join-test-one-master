@@ -4,10 +4,7 @@
 <mapper namespace="com.yizhi.student.dao.StudentInfoDao">
 
     <sql id="StudentColumns">
-        a
-        .
-        id
-        ,
+          a.id,
 		  a.student_id,
 		  a.exam_id,
 		  a.class_id,
@@ -46,32 +43,10 @@
           <include refid="StudentColumns"/>
         from s_student_info a
         <where>
-            <if test="id != null and id != ''">and a.id = #{id}</if>
-            <if test="studentId != null and studentId != ''">and a.student_id = #{studentId}</if>
-            <if test="examId != null and examId != ''">and a.exam_id = #{examId}</if>
             <if test="classId != null and classId != ''">and a.class_id = #{classId}</if>
             <if test="name != null and name != ''">and a.student_name LIKE CONCAT('%',#{name},'%')</if>
-            <if test="certify != null and certify != ''">and a.certify = #{certify}</if>
-            <if test="mailAddress != null and mailAddress != ''">and a.mail_address = #{mailAddress}</if>
-            <if test="foreignLanaguage != null and foreignLanaguage != ''">and a.foreign_lanaguage =#{foreignLanaguage}</if>
-            <if test="studentSex != null and studentSex != ''">and a.student_sex = #{studentSex}</if>
-            <if test="nation != null and nation != ''">and a.nation = #{nation}</if>
-            <if test="political != null and political != ''">and a.political = #{political}</if>
-            <if test="cardId != null and cardId != ''">and a.card_id = #{cardId}</if>
-            <if test="telephone != null and telephone != ''">and a.telephone = #{telephone}</if>
-            <if test="subjectType != null and subjectType != ''">and a.subject_type = #{subjectType}</if>
             <if test="tocollegeId != null and tocollegeId != ''">and a.tocollege = #{tocollegeId}</if>
-            <if test="tocampus != null and tocampus != ''">and a.tocampus = #{tocampus}</if>
             <if test="tomajorId != null and tomajorId != ''">and a.tomajor = #{tomajorId}</if>
-            <if test="birthplace != null and tocampus != ''">and a.tocampus = #{tocampus}</if>
-            <if test="grade != null and grade != ''">and a.grade = #{grade}</if>
-            <if test="isstate != null and isstate != ''">and a.isstate = #{isstate}</if>
-            <if test="birthday != null and birthday != ''">and a.birthday = #{birthday}</if>
-            <if test="note != null and note != ''">and a.note = #{note}</if>
-            <if test="addTime != null and addTime != ''">and a.add_time = #{addTime}</if>
-            <if test="addUserid != null and addUserid != ''">and a.add_userid = #{addUserid}</if>
-            <if test="editTime != null and editTime != ''">and a.edit_time = #{editTime}</if>
-            <if test="editUserid != null and editUserid != ''">and a.edit_userid = #{editUserid}</if>
         </where>
         <choose>
             <when test="sort != null and sort.trim() != ''">
@@ -89,32 +64,10 @@
     <select id="count" resultType="int">
         select count(*) from s_student_info a
         <where>
-            <if test="id != null and id != ''">and a.id = #{id}</if>
-            <if test="studentId != null and studentId != ''">and a.student_id = #{studentId}</if>
-            <if test="examId != null and examId != ''">and a.exam_id = #{examId}</if>
             <if test="classId != null and classId != ''">and a.class_id = #{classId}</if>
             <if test="name != null and name != ''">and a.student_name LIKE CONCAT('%',#{name},'%')</if>
-            <if test="certify != null and certify != ''">and a.certify = #{certify}</if>
-            <if test="mailAddress != null and mailAddress != ''">and a.mail_address = #{mailAddress}</if>
-            <if test="foreignLanaguage != null and foreignLanaguage != ''">and a.foreign_lanaguage =#{foreignLanaguage}</if>
-            <if test="studentSex != null and studentSex != ''">and a.student_sex = #{studentSex}</if>
-            <if test="nation != null and nation != ''">and a.nation = #{nation}</if>
-            <if test="political != null and political != ''">and a.political = #{political}</if>
-            <if test="cardId != null and cardId != ''">and a.card_id = #{cardId}</if>
-            <if test="telephone != null and telephone != ''">and a.telephone = #{telephone}</if>
-            <if test="subjectType != null and subjectType != ''">and a.subject_type = #{subjectType}</if>
             <if test="tocollegeId != null and tocollegeId != ''">and a.tocollege = #{tocollegeId}</if>
-            <if test="tocampus != null and tocampus != ''">and a.tocampus = #{tocampus}</if>
             <if test="tomajorId != null and tomajorId != ''">and a.tomajor = #{tomajorId}</if>
-            <if test="birthplace != null and tocampus != ''">and a.tocampus = #{tocampus}</if>
-            <if test="grade != null and grade != ''">and a.grade = #{grade}</if>
-            <if test="isstate != null and isstate != ''">and a.isstate = #{isstate}</if>
-            <if test="birthday != null and birthday != ''">and a.birthday = #{birthday}</if>
-            <if test="note != null and note != ''">and a.note = #{note}</if>
-            <if test="addTime != null and addTime != ''">and a.add_time = #{addTime}</if>
-            <if test="addUserid != null and addUserid != ''">and a.add_userid = #{addUserid}</if>
-            <if test="editTime != null and editTime != ''">and a.edit_time = #{editTime}</if>
-            <if test="editUserid != null and editUserid != ''">and a.edit_userid = #{editUserid}</if>
         </where>
     </select>
 
