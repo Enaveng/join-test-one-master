@@ -12,7 +12,19 @@
 2.MySql , Redis 连接配置需要修改为你本地连接
 
 程序访问入口:
-
-http://localhost:8080/index
+自主将端口号更改为8110
+http://localhost:8110/index
 平台登录帐号: admin 密码: 111111
 
+## 项目展示
+### 添加演示
+![](./images/1.png)
+![](./images/2.png)
+### 修改演示
+![](./images/3.png)
+![](./images/4.png)
+### 条件查询演示
+![](./images/5.png)
+### 删除演示
+![](./images/6.png)
+![](./images/7.png)
